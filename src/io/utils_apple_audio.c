@@ -35,10 +35,10 @@ void freeAudioBufferList(AudioBufferList *bufferList) {
 CFURLRef createURLFromPath(const char * path) {
   CFStringRef cfTotalPath = CFStringCreateWithCString (kCFAllocatorDefault,
       path, kCFStringEncodingUTF8);
-
-  CFURLRef url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, cfTotalPath,
-      kCFURLPOSIXPathStyle, false);
+    
+    CFURLRef url = CFURLCreateWithString(kCFAllocatorDefault, cfTotalPath, NULL);
   CFRelease(cfTotalPath);
+    
   return url;
 }
 
